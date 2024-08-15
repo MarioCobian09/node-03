@@ -5,7 +5,7 @@ import estudianteRoutes from "./routes/estudiantes.js"
 import ServiceAccount from "./config/firebase/firebaseServiceAccount.json" with { type: 'json' }
 
 admin.initializeApp({
-    credential: ServiceAccount
+    credential: admin.credential.cert(ServiceAccount)
 })
 
 const app = express()
